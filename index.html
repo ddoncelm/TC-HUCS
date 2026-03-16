@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="theme-color" content="#0d1117" />
+  <meta name="description" content="Protocolos TC - Hospital Universitario Costa del Sol. Guía para técnicos especialistas en radiodiagnóstico." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="TAC HUCS" />
+  <title>Protocolos TAC · HUCS</title>
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ── App Header ────────────────────────────────────────── -->
+  <header class="app-header">
+    <div class="header-logo">🩻</div>
+    <div class="header-text">
+      <h1>Protocolos TC · HUCS</h1>
+      <p>H.U. Costa del Sol · Radiodiagnóstico</p>
+    </div>
+    <div class="header-version">v1.0 · Philips</div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════════════
+       HOME VIEW
+  ═════════════════════════════════════════════════════════ -->
+  <div id="homeView">
+
+    <!-- Search section -->
+    <section class="search-section">
+      <div class="search-row">
+        <div class="input-wrap">
+          <span class="input-icon">🔍</span>
+          <input
+            id="searchInput"
+            class="search-input"
+            type="search"
+            placeholder="Buscar protocolo, zona anatómica o procedimiento…"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="input-wrap">
+          <span class="input-icon">#</span>
+          <input
+            id="codeInput"
+            class="search-input"
+            type="search"
+            placeholder="Nº protocolo (P.1, P.16…)"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <!-- Zona chips -->
+      <div id="zonaChips" class="zona-chips"></div>
+    </section>
+
+    <!-- Protocol list -->
+    <div id="listHeading" class="list-heading">Todos los protocolos</div>
+    <div id="protocolList"></div>
+
+    <!-- Error files section -->
+    <section class="error-section">
+      <div class="error-header">
+        <div class="error-title">📋 Solución de errores por equipo</div>
+        <div class="equipo-tabs">
+          <button class="equipo-tab active" data-equipo="philips">Philips</button>
+          <button class="equipo-tab" data-equipo="ge">GE</button>
+        </div>
+      </div>
+      <div class="error-body">
+        <div class="dropzone" id="dropzone">
+          <div class="dropzone-inner">
+            <div class="dropzone-icon">📂</div>
+            <p>Arrastra aquí el documento de errores</p>
+            <p class="hint">PDF, Word, imagen · Máx. 10 MB</p>
+            <label class="upload-btn">
+              Subir archivo
+              <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp" style="display:none" />
+            </label>
+          </div>
+        </div>
+        <div id="errorContent"></div>
+      </div>
+    </section>
+
+  </div><!-- /homeView -->
+
+
+  <!-- ════════════════════════════════════════════════════════
+       DETAIL VIEW
+  ═════════════════════════════════════════════════════════ -->
+  <div id="detailView" class="hidden">
+
+    <!-- Back -->
+    <div class="back-row">
+      <button class="back-btn" id="backBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Volver
+      </button>
+    </div>
+
+    <!-- Protocol header -->
+    <div class="detail-header">
+      <div class="detail-code" id="detailCode"></div>
+      <div class="detail-name" id="detailName"></div>
+      <div class="detail-full" id="detailFull"></div>
+      <div class="detail-badges" id="detailBadges"></div>
+    </div>
+
+    <!-- Position diagram -->
+    <div class="detail-section">
+      <div class="section-header">
+        <span class="section-icon">🛏️</span>
+        <span class="section-title">Posición en camilla</span>
+      </div>
+      <div class="section-body">
+        <div id="positionDiagram"></div>
+      </div>
+    </div>
+
+    <!-- Contrast quick-ref -->
+    <div class="detail-section" id="contrastBox">
+      <div class="section-header">
+        <span class="section-icon">💉</span>
+        <span class="section-title">Referencia de contraste</span>
+      </div>
+      <div class="section-body"></div>
+    </div>
+
+    <!-- Steps -->
+    <div class="detail-section">
+      <div class="section-header">
+        <span class="section-icon">📋</span>
+        <span class="section-title">Orden de actuación</span>
+      </div>
+      <div class="section-body">
+        <div id="stepsList" class="steps-list"></div>
+      </div>
+    </div>
+
+    <!-- Reconstructions -->
+    <div class="detail-section">
+      <div class="section-header">
+        <span class="section-icon">🔄</span>
+        <span class="section-title">Reconstrucciones</span>
+      </div>
+      <div class="section-body">
+        <div id="reconText" class="recon-text"></div>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="detail-section" id="notesSection">
+      <div class="section-header">
+        <span class="section-icon">⚠️</span>
+        <span class="section-title">Notas importantes</span>
+      </div>
+      <div class="section-body">
+        <div id="notesText" class="notes-text"></div>
+      </div>
+    </div>
+
+  </div><!-- /detailView -->
+
+  <footer class="app-footer">
+    HUCS Radiodiagnóstico · Protocolos TC Philips · 2024<br>
+    <span style="color: #3d4450">Para uso interno del servicio. Consultar con radiólogo ante dudas clínicas.</span>
+  </footer>
+
+</div><!-- /app-shell -->
+
+<!-- Scripts -->
+<script src="js/protocols.js"></script>
+<script src="js/app.js"></script>
+
+<!-- Service Worker registration -->
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('SW registered'))
+        .catch(err => console.log('SW registration failed:', err));
+    });
+  }
+</script>
+
+</body>
+</html>
