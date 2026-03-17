@@ -222,14 +222,14 @@ const PROTOCOLS = [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA." },
       { fase: "Topograma", icono: "topo", texto: "Scout AP toracoabdominal." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a la altura del hígado." },
-      { fase: "Contraste", icono: "contrast", texto: "100 cc de yodo + 20 cc de suero. Velocidad: 3 cc/sg. SIN contraste oral." },
+      { fase: "Contraste", icono: "contrast", texto: "100 cc de yodo + 20 cc de suero. Velocidad: 3 cc/sg." },
       { fase: "Fase Arterial", icono: "scan", texto: "1ª hélice: tórax + abdomen superior (fase arterial)." },
       { fase: "Fase Portal", icono: "scan", texto: "2ª hélice: solo abdomen superior (fase portal)." },
       { fase: "Envío", icono: "send", texto: "Las imágenes se envían automáticamente al Carestream." }
     ],
     contraste_detalle: { volumen: "100 cc yodo + 20 cc suero", velocidad: "3 cc/sg", delay: "BT hígado", bt: true, roi: "Aorta a nivel del hígado" },
     reconstrucciones: "No especificadas adicionales.",
-    notas: "Sin contraste oral. Dos fases: arterial (tórax+abd sup) + portal (solo abd sup)."
+    notas: "Dos fases: arterial (tórax+abd sup) + portal (solo abd sup)."
   },
   {
     id: "P8_4",
@@ -340,14 +340,14 @@ const PROTOCOLS = [
       { fase: "Topograma", icono: "topo", texto: "Scout AP toracoabdominopélvico." },
       { fase: "Fase S/C (si indicado)", icono: "scan", texto: "Solo si lo indica el radiólogo: estudio sin contraste previo con el mismo rango." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta torácica distal. Umbral 140 HU, mínimo retraso." },
-      { fase: "Contraste", icono: "contrast", texto: "100 cc de yodo + 40 cc de suero. Velocidad: 4 - 4,5 cc/sg. SIN contraste oral." },
+      { fase: "Contraste", icono: "contrast", texto: "100 cc de yodo + 40 cc de suero. Velocidad: 4 - 4,5 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Desde 2 cm por encima del cayado aórtico hasta la sínfisis del pubis." },
       { fase: "Adquisición", icono: "scan", texto: "Helicoidal 2 × 1 mm." },
       { fase: "Envío", icono: "send", texto: "Las imágenes se envían automáticamente al Carestream." }
     ],
     contraste_detalle: { volumen: "100 cc yodo + 40 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT (140 HU, mín. retraso)", bt: true, roi: "Aorta torácica distal", umbral: "140 HU" },
     reconstrucciones: "No especificadas.",
-    notas: "Sin contraste oral. Fase S/C previa solo si lo indica el radiólogo."
+    notas: "Fase S/C previa solo si lo indica el radiólogo."
   },
   {
     id: "P11_tor",
@@ -363,14 +363,14 @@ const PROTOCOLS = [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, brazos ARRIBA." },
       { fase: "Fase S/C (si indicado)", icono: "scan", texto: "Solo si indica el radiólogo: estudio s/c previo." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta descendente. Umbral 140 HU, mínimo retraso." },
-      { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 40 cc suero. Velocidad: 4 - 4,5 cc/sg. SIN contraste oral." },
+      { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 40 cc suero. Velocidad: 4 - 4,5 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Desde 2 cm por encima del cayado hasta bases pulmonares." },
       { fase: "Adquisición", icono: "scan", texto: "Helicoidal 2 × 1 mm." },
       { fase: "Envío", icono: "send", texto: "Envío automático al Carestream." }
     ],
     contraste_detalle: { volumen: "100 cc yodo + 40 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT aorta descendente (140 HU)", bt: true, roi: "Aorta descendente", umbral: "140 HU" },
     reconstrucciones: "No especificadas.",
-    notas: "Sin contraste oral."
+    notas: ""
   },
   {
     id: "P11_abd",
@@ -385,13 +385,13 @@ const PROTOCOLS = [
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, brazos ARRIBA." },
       { fase: "Fase S/C (urgencias)", icono: "scan", texto: "En urgencias: estudio s/c previo con mismo rango." },
-      { fase: "Bolus Tracking", icono: "roi", texto: "ROI a la altura de los riñones. Umbral 140 HU, mínimo retraso." },
-      { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 40 cc suero. Velocidad: 4 - 4,5 cc/sg. SIN contraste oral." },
+      { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta descendente por encima de hígado. Umbral 140 HU, mínimo retraso." },
+      { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 40 cc suero. Velocidad: 4 - 4,5 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Desde bases pulmonares hasta sínfisis del pubis." },
       { fase: "Adquisición", icono: "scan", texto: "Helicoidal 2 × 1 mm." },
       { fase: "Envío", icono: "send", texto: "Envío automático al Carestream." }
     ],
-    contraste_detalle: { volumen: "100 cc yodo + 40 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT riñones (140 HU)", bt: true, roi: "Aorta a nivel riñones", umbral: "140 HU" },
+    contraste_detalle: { volumen: "100 cc yodo + 40 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT aorta descendente (140 HU)", bt: true, roi: "Aorta descendente por encima de hígado", umbral: "140 HU" },
     reconstrucciones: "No especificadas.",
     notas: "En urgencias: siempre hacer fase s/c previa."
   },
@@ -407,13 +407,13 @@ const PROTOCOLS = [
     entrada: "pies",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, brazos ARRIBA." },
-      { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a nivel de los riñones." },
+      { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta descendente por encima de hígado." },
       { fase: "Contraste", icono: "contrast", texto: "80 cc yodo + 40 cc suero. Velocidad: 4 - 4,5 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Desde bases pulmonares hasta sínfisis del pubis." },
       { fase: "Adquisición", icono: "scan", texto: "Helicoidal 1 × 0,5 mm." },
       { fase: "Envío", icono: "send", texto: "Envío automático al Carestream." }
     ],
-    contraste_detalle: { volumen: "80 cc yodo + 40 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT riñones", bt: true, roi: "Aorta a nivel riñones" },
+    contraste_detalle: { volumen: "80 cc yodo + 40 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT aorta descendente", bt: true, roi: "Aorta descendente por encima de hígado" },
     reconstrucciones: "No especificadas.",
     notas: ""
   },
@@ -429,13 +429,13 @@ const PROTOCOLS = [
     entrada: "pies",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Pies juntos y en ligera rotación interna." },
-      { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a nivel de los riñones." },
+      { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta descendente por encima de hígado." },
       { fase: "Contraste", icono: "contrast", texto: "130 cc yodo (para ~70 kg) + 40 cc suero. Velocidad: 4,5 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Desde por encima de los riñones hasta la punta de los pies (hélice única)." },
       { fase: "Adquisición", icono: "scan", texto: "Helicoidal 2 × 1 mm. Única hélice de cabeza a pies." },
       { fase: "Envío", icono: "send", texto: "Todas las series a la estación 1. Scout, datos crudos y dosis al Carestream." }
     ],
-    contraste_detalle: { volumen: "130 cc yodo + 40 cc suero", velocidad: "4,5 cc/sg", delay: "BT riñones", bt: true, roi: "Aorta a nivel riñones" },
+    contraste_detalle: { volumen: "130 cc yodo + 40 cc suero", velocidad: "4,5 cc/sg", delay: "BT aorta descendente", bt: true, roi: "Aorta descendente por encima de hígado" },
     reconstrucciones: "No especificadas.",
     notas: "Ajustar volumen de contraste según peso del paciente (~130 cc para 70 kg)."
   },
@@ -446,7 +446,7 @@ const PROTOCOLS = [
     fullName: "Enteroclisis-TC",
     zona: "abdomen",
     contraste: true,
-    tags: ["intestino delgado", "enteroclisis", "intestino", "oral"],
+    tags: ["intestino delgado", "enteroclisis", "intestino"],
     posicion: "supino",
     entrada: "pies",
     steps: [
@@ -496,7 +496,6 @@ const PROTOCOLS = [
     entrada: "pies",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA." },
-      { fase: "Contraste oral", icono: "info", texto: "Administrar contraste oral según protocolo del servicio." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a nivel del hígado." },
       { fase: "Contraste IV", icono: "contrast", texto: "100 cc yodo + 20 cc suero. Velocidad: 3 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Abdomen y pelvis completos (única fase)." },
@@ -505,7 +504,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: { volumen: "100 cc yodo + 20 cc suero", velocidad: "3 cc/sg", delay: "BT hígado", bt: true, roi: "Aorta nivel hígado" },
     reconstrucciones: "No especificadas.",
-    notas: "Lleva contraste oral."
+    notas: ""
   },
   {
     id: "P16_sc",
@@ -526,7 +525,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: null,
     reconstrucciones: "No especificadas.",
-    notas: "Sin contraste oral ni IV."
+    notas: ""
   },
   {
     id: "P17",
@@ -539,7 +538,7 @@ const PROTOCOLS = [
     posicion: "supino",
     entrada: "pies",
     steps: [
-      { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA. SIN contraste oral." },
+      { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a nivel del hígado." },
       { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 20 cc suero. Velocidad: 4 - 4,5 cc/sg." },
       { fase: "Fase 1: Sin contraste", icono: "scan", texto: "Abdomen superior S/C (solo hígado)." },
@@ -550,7 +549,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: { volumen: "100 cc yodo + 20 cc suero", velocidad: "4-4,5 cc/sg", delay: "BT hígado", bt: true, roi: "Aorta nivel hígado" },
     reconstrucciones: "No especificadas.",
-    notas: "4 fases: previa s/c + arterial + venosa + tardía. Sin contraste oral."
+    notas: "4 fases: previa s/c + arterial + venosa + tardía."
   },
   {
     id: "P18",
@@ -586,16 +585,17 @@ const PROTOCOLS = [
     entrada: "pies",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA." },
-      { fase: "Fase 1: S/C", icono: "scan", texto: "Fase sin contraste. Sin conectar bomba." },
-      { fase: "1ª Inyección", icono: "contrast", texto: "40 cc contraste + 50 cc suero a 3 cc/sg. Esperar 15 MINUTOS." },
-      { fase: "Espera", icono: "info", texto: "⏱️ Esperar 15 minutos tras la 1ª inyección." },
-      { fase: "2ª Inyección", icono: "contrast", texto: "100 cc contraste + 30 cc suero a 3 cc/sg. Lanzar hélice con 60 sg de delay." },
-      { fase: "Adquisición", icono: "scan", texto: "Helicoidal 1 × 0,5 mm. Dos fases de abdomen y pelvis en decúbito supino." },
-      { fase: "Envío", icono: "send", texto: "Envío automático al Carestream." }
+      { fase: "Fase 1: S/C", icono: "scan", texto: "Adquisición sin contraste de abdomen y pelvis. SIN conectar la bomba." },
+      { fase: "1ª Inyección", icono: "contrast", texto: "Conectar bomba: 80 cc contraste + 50 cc suero a 3 cc/sg." },
+      { fase: "Espera", icono: "info", texto: "⏱️ Esperar 10 MINUTOS tras la 1ª inyección." },
+      { fase: "2ª Inyección", icono: "contrast", texto: "70 cc contraste + 30 cc suero a 3 cc/sg. Lanzar hélice con 60 sg de delay." },
+      { fase: "Adquisición", icono: "scan", texto: "Helicoidal 1 × 0,5 mm. Fase con contraste de abdomen y pelvis en decúbito supino." },
+      { fase: "Aviso al paciente", icono: "info", texto: "⚠️ Cuando falten 20 segundos: pedir al paciente que tosa 2 veces con el abdomen." },
+      { fase: "Envío", icono: "send", texto: "Las imágenes se envían automáticamente al Carestream." }
     ],
-    contraste_detalle: { volumen: "40+100 cc yodo / 50+30 cc suero", velocidad: "3 cc/sg", delay: "Fase 2: 60 sg + 15 min espera", bt: false },
+    contraste_detalle: { volumen: "80+70 cc yodo / 50+30 cc suero", velocidad: "3 cc/sg (ambas)", delay: "Fase 2: 60 sg tras 10 min espera", bt: false },
     reconstrucciones: "No especificadas.",
-    notas: "⚠️ Esperar obligatoriamente 15 min entre 1ª y 2ª inyección."
+    notas: "⚠️ Esperar obligatoriamente 10 min entre 1ª y 2ª inyección. Pedir 2 toses abdominales cuando falten 20 sg."
   },
   {
     id: "P20",
@@ -608,7 +608,7 @@ const PROTOCOLS = [
     posicion: "supino",
     entrada: "pies",
     steps: [
-      { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA. SIN contraste oral." },
+      { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA." },
       { fase: "Fase 1: S/C", icono: "scan", texto: "Fase sin contraste abarcando solo los riñones." },
       { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 20 cc suero. Velocidad: 3 cc/sg. Retraso: 90 sg." },
       { fase: "Fase 2: C/C", icono: "scan", texto: "Fase con contraste. Mismo rango: solo riñones." },
@@ -617,7 +617,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: { volumen: "100 cc yodo + 20 cc suero", velocidad: "3 cc/sg", delay: "90 sg", bt: false },
     reconstrucciones: "No especificadas.",
-    notas: "Sin contraste oral. Rango limitado a riñones."
+    notas: "Rango limitado a riñones."
   },
   {
     id: "P21",
@@ -631,7 +631,6 @@ const PROTOCOLS = [
     entrada: "cabeza",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, cabeza hacia el gantry. Brazos ARRIBA." },
-      { fase: "Contraste oral", icono: "info", texto: "Administrar contraste oral según protocolo." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta descendente." },
       { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 20 cc suero. Velocidad: 3 cc/sg." },
       { fase: "Nivel de corte", icono: "cut", texto: "Desde suelo de las órbitas hasta sínfisis del pubis (única hélice)." },
@@ -640,7 +639,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: { volumen: "100 cc yodo + 20 cc suero", velocidad: "3 cc/sg", delay: "BT aorta descendente", bt: true, roi: "Aorta descendente" },
     reconstrucciones: "No especificadas.",
-    notas: "Lleva contraste oral. Brazo ARRIBA. Hélice única de suelo de órbitas a sínfisis."
+    notas: "Brazos ARRIBA. Hélice única de suelo de órbitas a sínfisis."
   },
   {
     id: "P22",
@@ -654,7 +653,6 @@ const PROTOCOLS = [
     entrada: "pies",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino, pies hacia el gantry. Brazos ARRIBA." },
-      { fase: "Contraste oral", icono: "info", texto: "Administrar contraste oral según protocolo." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a nivel del hígado." },
       { fase: "Contraste", icono: "contrast", texto: "100 cc yodo + 20 cc suero. Velocidad: 3 cc/sg." },
       { fase: "Fase Arterial", icono: "scan", texto: "1ª hélice: tórax + abdomen superior (fase arterial)." },
@@ -663,7 +661,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: { volumen: "100 cc yodo + 20 cc suero", velocidad: "3 cc/sg", delay: "BT hígado", bt: true, roi: "Aorta nivel hígado" },
     reconstrucciones: "No especificadas.",
-    notas: "Lleva contraste oral. Dos fases: arterial (tórax+abd sup) + portal (abd+pelvis)."
+    notas: "Dos fases: arterial (tórax+abd sup) + portal (abd+pelvis)."
   },
   {
     id: "P22_4",
@@ -677,7 +675,6 @@ const PROTOCOLS = [
     entrada: "pies",
     steps: [
       { fase: "Posición", icono: "position", texto: "Decúbito supino. Brazos ARRIBA para tórax-abdomen." },
-      { fase: "Contraste oral", icono: "info", texto: "Administrar contraste oral." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta a la altura del hígado." },
       { fase: "1ª Inyección", icono: "contrast", texto: "100 cc yodo + 40 cc suero a 3 cc/sg." },
       { fase: "Fases Corporal", icono: "scan", texto: "Tórax-abd sup arterial + abd-pelvis portal con brazos arriba." },
@@ -701,7 +698,7 @@ const PROTOCOLS = [
     posicion: "supino",
     entrada: "cabeza",
     steps: [
-      { fase: "Posición", icono: "position", texto: "Decúbito supino. Brazos ARRIBA si es posible. SIN contraste oral." },
+      { fase: "Posición", icono: "position", texto: "Decúbito supino. Brazos ARRIBA si es posible." },
       { fase: "Parte 1: Cráneo S/C", icono: "scan", texto: "TC de cráneo SIN contraste (secuencial)." },
       { fase: "Parte 2: Columna Cervical", icono: "scan", texto: "TC de columna cervical S/C." },
       { fase: "Bolus Tracking", icono: "roi", texto: "ROI en aorta descendente. 120 cc yodo + 20 cc suero a 3 cc/sg." },
@@ -710,7 +707,7 @@ const PROTOCOLS = [
     ],
     contraste_detalle: { volumen: "120 cc yodo + 20 cc suero", velocidad: "3 cc/sg", delay: "BT aorta descendente", bt: true, roi: "Aorta descendente" },
     reconstrucciones: "No especificadas.",
-    notas: "⚠️ Estudio en 3 partes. Sin contraste oral. Cráneo → Col. cervical → Tx-Abd-Pv."
+    notas: "⚠️ Estudio en 3 partes. Cráneo → Col. cervical → Tx-Abd-Pv."
   },
   {
     id: "P24",
