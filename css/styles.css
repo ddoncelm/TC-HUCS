@@ -423,15 +423,18 @@ a { color: var(--accent); text-decoration: none; }
 .gantry-left { margin-right: 8px; }
 .gantry-right { margin-left: 8px; }
 
-/* Patient silhouette */
-.patient-body {
+/* Patient silhouette — headfirst: HEAD→TORSO→LEGS / feetfirst: LEGS→TORSO→HEAD */
+.patient-hf, .patient-ff {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 2px;
   height: 100%;
   flex: 1;
 }
-.patient-body.flipped { flex-direction: row-reverse; }
+/* headfirst: head on left nearest gantry */
+.patient-hf { flex-direction: row; }
+/* feetfirst: legs on left nearest gantry */
+.patient-ff { flex-direction: row; }
 
 .patient-head {
   width: 26px; height: 26px;
@@ -695,12 +698,31 @@ a { color: var(--accent); text-decoration: none; }
 /* ── Footer ────────────────────────────────────────────────────────────── */
 .app-footer {
   text-align: center;
-  padding: 32px 0 16px;
+  padding: 32px 0 20px;
   font-size: 0.75rem;
   color: var(--text-dim);
   border-top: 1px solid var(--border);
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
+.footer-main { text-align: center; line-height: 1.8; }
+.footer-disclaimer { color: #3d4450; }
+.footer-brand { opacity: 0.45; transition: opacity 0.2s; }
+.footer-brand:hover { opacity: 0.85; }
+.doncel-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.doncel-logo:hover { border-color: var(--border); }
+.doncel-svg { width: 120px; height: 40px; }
 
 /* ── Scrollbar ─────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
