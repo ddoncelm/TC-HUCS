@@ -178,25 +178,51 @@ function renderPositionDiagram(p) {
         <div class="position-subtitle">Consultar protocolo específico en PDI</div>
       </div>`;
   } else {
-    // Gantry on left or right depending on entry direction
-    const gantryLeft = isHeadfirst;
-    diagramHTML = `
-      <div class="position-diagram-wrap">
-        <div class="position-diagram ${isProne ? 'prone' : 'supine'}">
-          <div class="gantry-label">${gantryLeft ? "← GANTRY" : "GANTRY →"}</div>
-          <div class="table-scene">
-            ${gantryLeft
-        ? `<div class="gantry gantry-left"></div><div class="patient-body"><div class="patient-head"></div><div class="patient-torso"></div><div class="patient-legs"></div></div>`
-        : `<div class="patient-body flipped"><div class="patient-head"></div><div class="patient-torso"></div><div class="patient-legs"></div></div><div class="gantry gantry-right"></div>`
-      }
+    // headfirst: gantry LEFT, head towards gantry
+    // feetfirst: gantry RIGHT, feet towards gantry
+    if (isHeadfirst) {
+      // [GANTRY] [HEAD · TORSO · LEGS →]
+      diagramHTML = `
+        <div class="position-diagram-wrap">
+          <div class="position-diagram ${isProne ? 'prone' : 'supine'}">
+            <div class="gantry-label">← GANTRY</div>
+            <div class="table-scene">
+              <div class="gantry gantry-left"></div>
+              <div class="patient-hf">
+                <div class="patient-head"></div>
+                <div class="patient-torso"></div>
+                <div class="patient-legs"></div>
+              </div>
+            </div>
+            <div class="position-tags">
+              <span class="pos-tag">${isProne ? "DECÚBITO PRONO" : "DECÚBITO SUPINO"}</span>
+              <span class="pos-tag">CABEZA PRIMERO (Headfirst)</span>
+            </div>
           </div>
-          <div class="position-tags">
-            <span class="pos-tag">${isProne ? "DECÚBITO PRONO" : "DECÚBITO SUPINO"}</span>
-            <span class="pos-tag">${isHeadfirst ? "CABEZA PRIMERO (Headfirst)" : "PIES PRIMERO (Feetfirst)"}</span>
+          ${needsBrazosArriba(p) ? '<div class="arms-note">💪 BRAZOS ARRIBA (por encima de la cabeza)</div>' : ''}
+        </div>`;
+    } else {
+      // [← LEGS · TORSO · HEAD] [GANTRY]
+      diagramHTML = `
+        <div class="position-diagram-wrap">
+          <div class="position-diagram ${isProne ? 'prone' : 'supine'}">
+            <div class="gantry-label">GANTRY →</div>
+            <div class="table-scene">
+              <div class="patient-ff">
+                <div class="patient-legs"></div>
+                <div class="patient-torso"></div>
+                <div class="patient-head"></div>
+              </div>
+              <div class="gantry gantry-right"></div>
+            </div>
+            <div class="position-tags">
+              <span class="pos-tag">${isProne ? "DECÚBITO PRONO" : "DECÚBITO SUPINO"}</span>
+              <span class="pos-tag">PIES PRIMERO (Feetfirst)</span>
+            </div>
           </div>
-        </div>
-        ${needsBrazosArriba(p) ? `<div class="arms-note">💪 BRAZOS ARRIBA (por encima de la cabeza)</div>` : ''}
-      </div>`;
+          ${needsBrazosArriba(p) ? '<div class="arms-note">💪 BRAZOS ARRIBA (por encima de la cabeza)</div>' : ''}
+        </div>`;
+    }
   }
   container.innerHTML = diagramHTML;
 }
