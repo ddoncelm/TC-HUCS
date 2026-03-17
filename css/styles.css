@@ -432,9 +432,10 @@ a { color: var(--accent); text-decoration: none; }
   flex: 1;
 }
 /* headfirst: head on left nearest gantry */
+/* headfirst: HEAD left nearest gantry → TORSO → LEGS right */
 .patient-hf { flex-direction: row; }
-/* feetfirst: legs on left nearest gantry */
-.patient-ff { flex-direction: row; }
+/* feetfirst: HEAD right, LEGS left nearest gantry */
+.patient-ff { flex-direction: row-reverse; }
 
 .patient-head {
   width: 26px; height: 26px;
