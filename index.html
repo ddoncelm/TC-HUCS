@@ -182,8 +182,38 @@
   </div><!-- /detailView -->
 
   <footer class="app-footer">
-    HUCS Radiodiagnóstico · Protocolos TC Philips · 2024<br>
-    <span style="color: #3d4450">Para uso interno del servicio. Consultar con radiólogo ante dudas clínicas.</span>
+    <div class="footer-main">
+      HUCS Radiodiagnóstico · Protocolos TC Philips · 2024<br>
+      <span class="footer-disclaimer">Para uso interno del servicio. Consultar con radiólogo ante dudas clínicas.</span>
+    </div>
+    <div class="footer-brand">
+      <a href="mailto:doncel.project@gmail.com" class="doncel-logo" title="doncelproject · doncel.project@gmail.com">
+        <svg class="doncel-svg" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+          <!-- DP monogram -->
+          <g>
+            <!-- D outer arc -->
+            <path d="M8 6 L8 34 L20 34 Q36 34 36 20 Q36 6 20 6 Z" fill="none" stroke="url(#dpgrad)" stroke-width="3.5" stroke-linejoin="round"/>
+            <!-- P inner -->
+            <path d="M14 10 L14 30 M14 10 L22 10 Q30 10 30 18 Q30 26 22 26 L14 26" fill="none" stroke="url(#dpgrad2)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            <!-- slash accent -->
+            <line x1="18" y1="26" x2="28" y2="10" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+          </g>
+          <defs>
+            <linearGradient id="dpgrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#2d8cf0"/>
+              <stop offset="100%" stop-color="#1a56b8"/>
+            </linearGradient>
+            <linearGradient id="dpgrad2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#e2e8f0"/>
+              <stop offset="100%" stop-color="#94a3b8"/>
+            </linearGradient>
+          </defs>
+          <!-- doncelproject text -->
+          <text x="44" y="22" font-family="Sora, sans-serif" font-size="10" font-weight="700" fill="#e2e8f0" letter-spacing="-0.2">doncel</text>
+          <text x="85" y="22" font-family="Sora, sans-serif" font-size="10" font-weight="600" fill="#2d8cf0" letter-spacing="-0.2">project</text>
+        </svg>
+      </a>
+    </div>
   </footer>
 
 </div><!-- /app-shell -->
